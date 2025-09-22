@@ -4,10 +4,10 @@
 
 > *"We built this comprehensive document analysis platform to revolutionize how you process, analyze, and extract insights from documents!"*
 
-### The Problem 😤
+### The Problem 
 As professionals and researchers, we waste HOURS manually analyzing documents, extracting key information, and finding related content. Existing tools are either too expensive, too complicated, or lack comprehensive analysis capabilities.
 
-### Our Solution ✨
+### Our Solution 
 An AI-powered document analysis platform that:
 - Automatically analyzes and summarizes uploaded documents
 - Extracts key topics and provides intelligent insights
@@ -15,7 +15,7 @@ An AI-powered document analysis platform that:
 - Provides real-time billing with usage tracking
 - Works with PDFs, Word docs, and text files
 
-## What Makes It Special 🚀
+## What Makes It Special 
 
 ### Built by Developers, For Professionals
 - 📄 **Document Processing**: Extract and analyze text from PDF, DOCX, and TXT files
