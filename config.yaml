@@ -1,0 +1,221 @@
+# Smart Research Assistant Configuration File
+
+# Application Settings
+app:
+  name: "Smart Research Assistant"
+  version: "1.0.0"
+  description: "AI-powered document research and citation tool"
+  author: "Smart Research Assistant Team"
+
+# Data Storage Configuration
+storage:
+  data_directory: "./data"
+  uploads_directory: "./uploads"
+  cache_directory: "./cache"
+  max_file_size_mb: 100
+  cleanup_old_data_days: 90
+
+# Document Processing Configuration
+document_processing:
+  supported_formats:
+    - ".txt"
+    - ".pdf" 
+    - ".docx"
+  
+  # Text extraction settings
+  text_extraction:
+    encoding: "utf-8"
+    error_handling: "ignore"
+    max_pages_per_document: 1000
+    paragraphs_per_page_docx: 20
+  
+  # Duplicate detection
+  duplicate_detection:
+    enabled: true
+    hash_algorithm: "md5"
+
+# Search Engine Configuration
+search:
+  # TF-IDF settings
+  tf_idf:
+    min_word_length: 3
+    max_results_default: 50
+    relevance_threshold: 0.1
+  
+  # Search behavior
+  behavior:
+    case_sensitive: false
+    context_length: 100
+    max_cross_references: 10
+    related_terms_count: 5
+  
+  # Stop words (common words to ignore)
+  stop_words:
+    - "the"
+    - "and" 
+    - "or"
+    - "but"
+    - "in"
+    - "on"
+    - "at"
+    - "to"
+    - "for"
+    - "of"
+    - "with"
+    - "by"
+
+# Online Integration Configuration
+online:
+  # Rate limiting
+  rate_limits:
+    requests_per_minute: 10
+    max_concurrent_requests: 5
+  
+  # Timeout settings
+  timeouts:
+    connection_timeout: 10
+    read_timeout: 30
+  
+  # Source configurations
+  sources:
+    wikipedia:
+      enabled: true
+      base_url: "https://en.wikipedia.org/api/rest_v1/"
+      max_results: 5
+      
+    arxiv:
+      enabled: true
+      base_url: "http://export.arxiv.org/api/query"
+      max_results: 5
+      
+    # Example for additional sources (disabled by default)
+    newsapi:
+      enabled: false
+      base_url: "https://newsapi.org/v2/"
+      api_key: ""  # Add your API key here
+      max_results: 10
+
+# Citation System Configuration  
+citations:
+  # Default citation style
+  default_style: "simple"
+  
+  # Available styles
+  styles:
+    - "simple"
+    - "apa"
+    - "mla"
+  
+  # Citation formatting
+  formatting:
+    max_title_length: 100
+    date_format: "%Y-%m-%d"
+    url_display_domain_only: true
+
+# Usage Tracking Configuration
+usage_tracking:
+  # Session management
+  session:
+    auto_end_inactive_minutes: 60
+    track_user_ratings: true
+  
+  # Statistics calculation
+  statistics:
+    default_period_days: 30
+    peak_hours_count: 3
+    common_terms_count: 5
+  
+  # Billing configuration (for usage-based pricing)
+  billing:
+    enabled: false
+    currency: "USD"
+    pricing:
+      query: 0.01
+      document_processing: 0.005
+      online_search: 0.002
+      report_generation: 0.05
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Log files
+  files:
+    main_log: "./logs/smart_research_assistant.log"
+    error_log: "./logs/errors.log"
+    usage_log: "./logs/usage.log"
+  
+  # Log rotation
+  rotation:
+    max_size_mb: 10
+    backup_count: 5
+
+# Performance Configuration
+performance:
+  # Caching
+  caching:
+    enabled: true
+    max_cache_size_mb: 100
+    cache_expiry_hours: 24
+  
+  # Processing limits
+  limits:
+    max_concurrent_documents: 5
+    max_search_results: 100
+    max_online_requests_per_query: 10
+  
+  # Memory management
+  memory:
+    max_document_size_mb: 50
+    garbage_collection_threshold: 100
+
+# Security Configuration
+security:
+  # File upload restrictions
+  file_upload:
+    allowed_extensions:
+      - ".txt"
+      - ".pdf"
+      - ".docx"
+    scan_for_malware: false
+    quarantine_directory: "./quarantine"
+  
+  # API security (if implementing web interface)
+  api:
+    enable_cors: false
+    allowed_origins: []
+    rate_limiting: true
+    api_key_required: false
+
+# Development Configuration
+development:
+  debug_mode: false
+  verbose_logging: false
+  enable_profiling: false
+  
+  # Testing
+  testing:
+    use_mock_online_sources: false
+    sample_data_directory: "./samples"
+
+# Deployment Configuration
+deployment:
+  environment: "production"  # development, staging, production
+  
+  # Web service settings (if deploying as web service)
+  web_service:
+    host: "0.0.0.0"
+    port: 8000
+    workers: 4
+    
+  # Docker settings
+  docker:
+    image_name: "smart-research-assistant"
+    container_port: 8000
+    
+  # Health checks
+  health_check:
+    enabled: true
+    endpoint: "/health"
+    interval_seconds: 30

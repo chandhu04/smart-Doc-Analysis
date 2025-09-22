@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2025-09-22T20:49:32.931536",
+    "new_sources_count": 3,
+    "total_sources": 3,
+    "source_types": {
+      "news": 1,
+      "blog": 2
+    }
+  },
+  {
+    "timestamp": "2025-09-22T20:50:02.933791",
+    "new_sources_count": 1,
+    "total_sources": 4,
+    "source_types": {
+      "news": 1,
+      "blog": 3
+    }
+  },
+  {
+    "timestamp": "2025-09-22T20:50:32.939216",
+    "new_sources_count": 3,
+    "total_sources": 7,
+    "source_types": {
+      "news": 1,
+      "blog": 6
+    }
+  },
+  {
+    "timestamp": "2025-09-22T20:51:02.948124",
+    "new_sources_count": 1,
+    "total_sources": 8,
+    "source_types": {
+      "news": 2,
+      "blog": 6
+    }
+  },
+  {
+    "timestamp": "2025-09-22T20:51:32.952699",
+    "new_sources_count": 2,
+    "total_sources": 10,
+    "source_types": {
+      "news": 3,
+      "blog": 7
+    }
+  }
+]
